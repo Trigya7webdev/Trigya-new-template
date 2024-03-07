@@ -784,7 +784,8 @@
 }
 
 .team .team-item .team-content h5 {
-    color: var(--bs-secondary);
+/*     color: var(--bs-secondary); */
+    color: #14579e;
     transition: 0.5s;
 }
 
