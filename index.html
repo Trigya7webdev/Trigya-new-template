@@ -923,7 +923,7 @@ Landline: 011-41724068</p>
 Over the few years has been really heart-warming. But your love for our products is the greatest achievement that we have made!</p> 
                 </div>
 
-        <div class="achievments_row row">
+<!--         <div class="achievments_row row">
                 <div class="col-md-3 col-sm-6 p0 completed">
             <span class="counter">32</span>
                     <h6>PRODUCTS LAUNCHED</h6>
@@ -940,7 +940,84 @@ Over the few years has been really heart-warming. But your love for our products
                  <span class="counter">70</span>
                     <h6>HEALTH CAMPS ORGANISED</h6>
                 </div>
-            </div>
+            </div> -->
+
+      
+        <style>
+.achievments_row {
+    text-align: center;
+}
+
+.counter {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+}
+
+h6 {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+</style>
+
+<div class="achievments_row row">
+    <div class="col-md-3 col-sm-6 p0 completed">
+        <span class="counter" data-count="32">0</span>
+        <h6>PRODUCTS LAUNCHED</h6>
+    </div>
+    <div class="col-md-3 col-sm-6 p0 completed">
+        <span class="counter" data-count="20000">0</span>
+        <h6>CUSTOMERS SERVED</h6>
+    </div>
+    <div class="col-md-3 col-sm-6 p0 completed">
+        <span class="counter" data-count="102">0</span>
+        <h6>HERBS USED</h6>
+    </div>
+    <div class="col-md-3 col-sm-6 p0 completed">
+        <span class="counter" data-count="70">0</span>
+        <h6>HEALTH CAMPS ORGANISED</h6>
+    </div>
+</div>
+
+<script>
+// Function to animate the counter
+function animateCounter(element, target, duration) {
+    let start = 0;
+    const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const increment = Math.floor((target / duration) * progress);
+        if (increment < target) {
+            element.textContent = increment;
+            window.requestAnimationFrame(step);
+        } else {
+            element.textContent = target;
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Get all elements with the class 'counter'
+const counters = document.querySelectorAll('.counter');
+
+// Loop through each counter element
+counters.forEach(counter => {
+    // Get the target count from the 'data-count' attribute
+    const target = parseInt(counter.getAttribute('data-count'));
+    // Get the duration for the animation (in milliseconds)
+    const duration = 2000; // You can adjust the duration as needed
+    // Start the counter animation
+    animateCounter(counter, target, duration);
+});
+</script>
 
         
         <!-- Achievement Counter End-->
