@@ -706,6 +706,110 @@ counters.forEach(counter => {
                     <p class="mb-0">The most talented trigya team comprising of doctors, nutritionists & dieticians reaching out to the society to spread
 awareness on Ayurveda, Healthcare and Supplements with speacial health camps organised all over Delhi NCR</p> 
                 </div>
+
+
+
+<style>
+/* Container for the image grid */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+/* Individual image container */
+.image-container {
+  position: relative;
+  margin: 10px;
+  width: calc(25% - 20px); /* Adjust margin and width as needed */
+  cursor: pointer;
+}
+
+/* Image styles */
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Text overlay */
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 192, 203, 0.5); /* Pink background with 50% opacity */
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect */
+.image-container:hover .image-text {
+  opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .image-container {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .image-container {
+    width: calc(100% - 20px);
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="image-grid">
+  <div class="image-container">
+    <img src="image1.jpg" alt="Image 1">
+    <div class="image-text">Text Overlay 1</div>
+  </div>
+  <div class="image-container">
+    <img src="image2.jpg" alt="Image 2">
+    <div class="image-text">Text Overlay 2</div>
+  </div>
+  <div class="image-container">
+    <img src="image3.jpg" alt="Image 3">
+    <div class="image-text">Text Overlay 3</div>
+  </div>
+  <div class="image-container">
+    <img src="image4.jpg" alt="Image 4">
+    <div class="image-text">Text Overlay 4</div>
+  </div>
+  <div class="image-container">
+    <img src="image5.jpg" alt="Image 5">
+    <div class="image-text">Text Overlay 5</div>
+  </div>
+  <div class="image-container">
+    <img src="image6.jpg" alt="Image 6">
+    <div class="image-text">Text Overlay 6</div>
+  </div>
+  <div class="image-container">
+    <img src="image7.jpg" alt="Image 7">
+    <div class="image-text">Text Overlay 7</div>
+  </div>
+  <div class="image-container">
+    <img src="image8.jpg" alt="Image 8">
+    <div class="image-text">Text Overlay 8</div>
+  </div>
+</div>
+
+
+
+
+
+
         
         <!-- Image-collage section end -->
 
