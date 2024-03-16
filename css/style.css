@@ -777,7 +777,7 @@
 }
 
 .team .team-item:hover .team-img::before {
-    background: rgba(20,87,158, .7);
+    background: rgba(20,87,158, .8);
 }
 
 .team .team-item .team-content {
