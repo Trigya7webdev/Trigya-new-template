@@ -695,6 +695,61 @@ h6 {
 
 
 <script>
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to animate the counter
+function animateCounter(element, target, duration) {
+    let start = 0;
+    const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const increment = Math.floor((target / duration) * progress);
+        if (increment < target) {
+            element.textContent = increment;
+            window.requestAnimationFrame(step);
+        } else {
+            element.textContent = target;
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Function to handle scroll event
+function handleScroll() {
+    const section = document.querySelector('.achieve-counter');
+    const counters = document.querySelectorAll('.counter');
+
+    // Check if the section is in the viewport
+    if (isInViewport(section)) {
+        counters.forEach(counter => {
+            // Get the target count from the 'data-count' attribute
+            const target = parseInt(counter.getAttribute('data-count'));
+            // Get the duration for the animation (in milliseconds)
+            const duration = 2000; // You can adjust the duration as needed
+            // Start the counter animation
+            animateCounter(counter, target, duration);
+        });
+        // Remove scroll event listener once counters are animated
+        window.removeEventListener('scroll', handleScroll);
+    }
+}
+
+// Add scroll event listener to trigger counter animation
+window.addEventListener('scroll', handleScroll);
+</script>
+
+
+        
+<!-- <script>
 // Function to animate the counter
 function animateCounter(element, target, duration) {
     let start = 0;
@@ -724,7 +779,7 @@ counters.forEach(counter => {
     // Start the counter animation
     animateCounter(counter, target, duration);
 });
-</script>
+</script> -->
 
         <!-- Achievement Counter End-->
 
