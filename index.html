@@ -719,7 +719,6 @@ h6 {
 </style>
 
 
-<script>
 // Function to check if an element is in the viewport
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
@@ -768,9 +767,10 @@ function handleScroll() {
     }
 }
 
-// Add scroll event listener to trigger counter animation
+// Add event listeners for scrolling and page load
 window.addEventListener('scroll', handleScroll);
-</script>
+window.addEventListener('load', handleScroll); // Handle initial state on page load
+
 
 
         
